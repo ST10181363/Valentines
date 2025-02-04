@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentines</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .gif-container {
+            width: 80%;
+            max-width: 300px;
+            height: auto;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        #yes {
+            background-color: #ff00ff;
+            color: white;
+        }
+        #no {
+            background-color: aqua;
+            color: white;
+            position: absolute;
+        }
+        #message {
+            display: none;
+            font-size: 35px;
+            margin-top: 20px;
+            color: red;
+        }
+        h2 {
+            font-size: 50px;
+            color: #ff00ff;
+        }
+    </style>
+</head>
+<body>
+
+        <div class="gif-container">
+            <img src="https://i.pinimg.com/originals/ca/ab/70/caab700ce5f1503e0ac9ffa2f4c1d66c.gif" alt="happy valentines">
+        </div>
+
+        <h2>Will You Be My Valentine?! (hmm say , I dare you!)</h2>
+
+        <div class="container">
+            <button id="yes">YES</button>
+            <button id="no">NO</button>
+        </div>
+        
+        <p id="message">LOl! SIKE! You thought I was feeling you? Nah. I just did this coz I am bored and i choose to torment people
+            it's your fault for liking things shame.
+        </p>
+
+        <script>
+            document.getElementById("yes").addEventListener("click", function() {
+                document.getElementById("message").style.display = "block";
+            });
+
+            document.getElementById("no").addEventListener("mouseover", function() {
+                let btn = this;
+                let maxX = window.innerWidth - btn.clientWidth - 20;
+                let maxY = window.innerHeight - btn.clientHeight - 20;
+
+                let x = Math.random() * maxX;
+                let y = Math.random() * maxy;
+
+                btn.style.left = x + "px";
+                btn.style.top = y + "px";
+            });
+        </script>
+</body>
+</html>
