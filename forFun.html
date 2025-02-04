@@ -21,6 +21,7 @@
             width: 30%;
             max-width: 300px;
             height: auto;
+            padding-right: 25%;
         }
         .container {
             position: relative;
@@ -31,9 +32,8 @@
         }
         button {
             font-size: 20px;
-            padding: 10px 30px;
+            padding: 10px 20px;
             border: none;
-            border-radius: 8px;
             cursor: pointer;
             transition: 0.3s ease-in-out;
         }
@@ -45,12 +45,12 @@
         #no {
             background-color: aqua;
             color: white;
-            position: absolute;
+            position: relative;
         }
         #message {
             display: none;
             font-size: 35px;
-            margin-top: 20px;
+            margin-top: 10px;
             color: red;
         }
         h2 {
@@ -72,8 +72,7 @@
             <button id="no">NO</button>
         </div>
         
-        <p id="message">LOl! SIKE! You thought I was feeling you? Nah. I just did this coz I am bored and i choose to torment people
-            it's your fault for liking things shame.
+        <p id="message"> SIKE! You thought I was feeling you?! LOL nah! It's your own fault for liking thngs. (p.s don't feel special everyone is getting pranked)
         </p>
 
         <script>
@@ -83,11 +82,11 @@
 
             document.getElementById("no").addEventListener("mouseover", function() {
                 let btn = this;
-                let maxX = window.innerWidth - btn.clientWidth - 20;
-                let maxY = window.innerHeight - btn.clientHeight - 20;
+                let maxX = window.innerWidth - btn.clientWidth - 50;
+                let maxY = window.innerHeight - btn.clientHeight - 50;
 
                 let x = Math.random() * maxX;
-                let y = Math.random() * maxy;
+                let y = Math.random() * maxY;
 
                 btn.style.left = x + "px";
                 btn.style.top = y + "px";
