@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentines</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>I.DontReallyLikeYou!LOl!</title>
     <style>
         body {
             text-align: center;
@@ -15,27 +15,27 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            overflow: hidden;
         }
         .gif-container {
-            width: 30%;
-            max-width: 300px;
+            width: 60%;
+            max-width: 250px;
             height: auto;
-            padding-right: 25%;
         }
         .container {
             position: relative;
             display: flex;
             gap: 20px;
-            justify-content: center;
+            justify-content: space-between;
             margin-top: 20px;
+            width: 80%;
         }
         button {
             font-size: 20px;
             padding: 10px 20px;
+            margin: 10px;
             border: none;
             cursor: pointer;
-            transition: 0.3s ease-in-out;
+            transition: transform 0.2s;
         }
 
         #yes {
@@ -50,7 +50,7 @@
         #message {
             display: none;
             font-size: 35px;
-            margin-top: 10px;
+            margin-top: 20px;
             color: red;
         }
         h2 {
@@ -76,21 +76,27 @@
         </p>
 
         <script>
-            document.getElementById("yes").addEventListener("click", function() {
-                document.getElementById("message").style.display = "block";
+            const yesButton = document.getElementById("yes");
+            const noButton = document.getElementById("no");
+            const message = document.getElementById("message");
+
+            yesButton.addEventListener("click", () => {
+                message.style.display = "block";
             });
 
-            document.getElementById("no").addEventListener("mouseover", function() {
-                let btn = this;
-                let maxX = window.innerWidth - btn.clientWidth - 50;
-                let maxY = window.innerHeight - btn.clientHeight - 50;
+            noButton.addEventListener("touchstart", moveButton);
+            noButton.addEventListener("mouseover", moveButton);
+
+            function moveButton() {
+                let maxX = window.innerWidth - noButton.clientWidth -20;
+                let maxY = window.innerHeight - noButton.clientHeight - 20;
 
                 let x = Math.random() * maxX;
                 let y = Math.random() * maxY;
 
-                btn.style.left = x + "px";
-                btn.style.top = y + "px";
-            });
+                noButton.style.left = x + "px";
+                noButton.style.top = y + "px";
+            }
         </script>
 </body>
 </html>
